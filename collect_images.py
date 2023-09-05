@@ -26,10 +26,10 @@ for target in targets:
   print(f"filename:{filename} img_src:{img_src}")
 
   try:
-    img_res = requests.get(img_url)
+    img_res = requests.get(img_src)
     with open(f"./{images_dir_path}/{filename}.jpg", "wb") as f:
       f.write(img_res.content)
-  except Exception:
+  except Exception as e:
     print("画像が読み込めませんでした。")
 
   time.sleep(20)
